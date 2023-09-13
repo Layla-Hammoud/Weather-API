@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import clear from "../img/weather-icons/clear.svg";
-
-function Search() {
+const Search = () =>{
   const [input, setInput] = useState("");
 
   const handleInputChange = (event) => {
@@ -11,7 +10,6 @@ function Search() {
   const handleSubmit = () => {
 
   };
-
   return (
     <header>
       <input type="text" name="text" placeholder="Entre your city" value={input}
@@ -20,5 +18,4 @@ function Search() {
     </header>
   );
 }
-
 export default Search;
