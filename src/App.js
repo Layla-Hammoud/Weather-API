@@ -6,13 +6,12 @@ import "./App.css";
 import image from "./img/weather-icons/clear.svg"
 
 const App = () => {
-  const [name, setName] = useState("Karim");
-  const handleInputChange = (value) => {
-    setName(value);
-  };
-
   return (
     <div className="app">
+      <header>
+        <input type="text" name="text" placeholder="Entre your city"></input>
+        <button type="button">FIND WEATHER</button>
+      </header>
       <main>
         <section className="currentWeather">
           <img src={image}></img>

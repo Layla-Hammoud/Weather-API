@@ -2,14 +2,43 @@
 body{
   margin: 0;
   padding: 0;
-  font-family: "Raleway", sans-serif;
+  font-family:"Raleway", sans-serif;
+}
+
+header {
+  background-color: #759eda;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  color: white;
+  background: transparent;
+  border: none;
+  margin-left: 10px;
+  font-size: 20px;  
+}
+
+input:focus{
+  border-bottom: 1px solid #FFF;
+  outline: none;
+}
+
+button {
+  font: size 20px;
+  color: black;
+  background-color: #5879c7;
+  margin-left: 200px;
+  margin-bottom: 22px;
+  border: none;
+  padding: 15px;
+  font-size: 20px;
 }
 main{
   background-color: #9ccef4;
 }
-/*  Search bar */
-
-/* Current weather */
 .weatherStatus{
   color: white;
 }
@@ -55,7 +84,7 @@ ul{
   padding-left: 10px;
 }
 .forcast{
-  padding-bottom:50px ;
+  padding-bottom:65px ;
 }
 .weatherTemperature{
   font-size: 1.5em;
@@ -63,10 +92,18 @@ ul{
 .weatherStatus{
   font-size: 1.3em;
 }
-@media only screen and (max-width: 745px) {
-  li img{
-    width: 75px;
-    height: 75px;
+@media only screen and (max-width: 1000px) {
+  button {
+    margin: 0;
+    margin-right: 20px;
+    padding: 10px;
+  }
+  input{
+    margin-left: 0;
+    width:150px
+  }
+  header{
+    justify-content: space-between;
   }
 }
 @media only screen and (max-width: 745px) {
@@ -78,6 +115,31 @@ ul{
     font-size: 0.9em;
   }
   .currentWeather{
-    padding: 50px 0
+    padding: 40px 0
+  }
+  .forcast{
+    padding: 118px 0;
+  }
+}
+@media only screen and (max-width: 400px) {
+  button{
+    font-size: 13px;
+    padding:10px;
+  }
+  input {
+    font-size: 10px;
+  }
+  li img{
+    width: 30px;
+    height: 30px;
+  }
+  .forcast{
+    padding: 123px 0;
+  }
+  .forcast{
+    padding: 5px 0;
+  }
+  .currentWeather{
+    padding: 20px 0;
   }
 }
