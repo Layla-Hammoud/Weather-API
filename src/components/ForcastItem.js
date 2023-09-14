@@ -1,6 +1,6 @@
-import image from "../img/weather-icons/clear.svg"
-import {formatTime} from "../common function/comminFunction"
-const ForcastItem = ({date,temp}) => {
+import {formatTime , displayProperImage} from "../common function/comminFunction"
+const ForcastItem = ({date,temp,id}) => {
+    const image = require(`../img/weather-icons/${displayProperImage(id)}`)
     return (
         <li>
             <p className="time">{formatTime(date)}</p>

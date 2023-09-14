@@ -9,7 +9,7 @@ const Search = ({setCity}) => {
     <header>
       <input type="text" name="text" placeholder="Entre your city" value={input}
         onChange={handleInputChange}></input>
-      <button type="button" onClick={()=>setCity(input)}>FIND WEATHER</button>
+      <button type="button" onClick={()=>{setCity(input); setInput("")}}>FIND WEATHER</button>
     </header>
   );
 }

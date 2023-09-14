@@ -1,5 +1,8 @@
-import image from "../img/weather-icons/clear.svg";
-const CurrentWeather = ({ currentWeather }) => {
+import {displayProperImage} from "../common function/comminFunction"
+const CurrentWeather = ({ currentWeather,id }) => {
+  const image = require(`../img/weather-icons/${displayProperImage(id)}`)
+  console.log(image)
+  //console.log(id)
   return (
     <section className="currentWeather">
       <img src={image}></img>

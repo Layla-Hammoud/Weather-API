@@ -22,7 +22,7 @@ const App = () => {
   };
   const currentWeather = weatherData.list && weatherData.list.length > 0 ? weatherData.list[0] : null;
   const forcasttWeather = weatherData.list && weatherData.list.length > 0 ?  weatherData.list.slice(1) : [];
-  console.log(forcasttWeather)
+  
   useEffect(() => {
      getData(weatherData);
   }, [city]);
@@ -30,7 +30,7 @@ const App = () => {
     <div className="app">
       <Search setCity={setCity} />
       <main>
-      {currentWeather!==null?<CurrentWeather currentWeather={currentWeather} />:null}
+      {currentWeather!==null?<CurrentWeather currentWeather={currentWeather} id={currentWeather["weather"][0]["id"]}/>:null}
       {forcasttWeather.length !==0? <WeatherForcast data={forcasttWeather} /> : ""}
       </main>
     </div>
