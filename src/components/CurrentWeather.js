@@ -1,8 +1,6 @@
 import {displayProperImage} from "../common function/comminFunction"
 const CurrentWeather = ({ currentWeather,id }) => {
   const image = require(`../img/weather-icons/${displayProperImage(id)}`)
-  console.log(image)
-  //console.log(id)
   return (
     <section className="currentWeather">
       <img src={image}></img>
@@ -11,8 +9,8 @@ const CurrentWeather = ({ currentWeather,id }) => {
       <h3 className="weatherTemperature">
         Temperature{" "}
         <span>
-          {Math.round(currentWeather.main.temp_min)}&deg; to {" "}
-          {Math.round(currentWeather.main.temp_max)}&deg;C
+          {currentWeather.main.temp_min}&deg; to {" "}
+          {currentWeather.main.temp_max}&deg;C
         </span>
       </h3>
       <p className="moreInfo">

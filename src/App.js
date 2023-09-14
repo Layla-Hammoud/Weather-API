@@ -22,7 +22,7 @@ const App = () => {
   };
   const currentWeather = weatherData.list && weatherData.list.length > 0 ? weatherData.list[0] : null;
   const forcasttWeather = weatherData.list && weatherData.list.length > 0 ?  weatherData.list.slice(1) : [];
-  
+  console.log(forcasttWeather)
   useEffect(() => {
      getData(weatherData);
   }, [city]);
