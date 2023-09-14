@@ -11,8 +11,8 @@ const CurrentWeather = ({ currentWeather,id }) => {
       <h3 className="weatherTemperature">
         Temperature{" "}
         <span>
-          {currentWeather.main.temp_min} to {" "}
-          {currentWeather.main.temp_max} C
+          {Math.round(currentWeather.main.temp_min)}&deg; to {" "}
+          {Math.round(currentWeather.main.temp_max)}&deg;C
         </span>
       </h3>
       <p className="moreInfo">

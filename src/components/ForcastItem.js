@@ -5,7 +5,7 @@ const ForcastItem = ({date,temp,id}) => {
         <li>
             <p className="time">{formatTime(date)}</p>
             <img src={image}></img>
-            <p className="forcatTemprature">{temp} C</p>
+            <p className="forcatTemprature">{Math.round(temp)}&deg;C</p>
         </li>
     );
 };
