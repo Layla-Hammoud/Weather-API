@@ -8,13 +8,13 @@ const CurrentWeather = ({ currentWeather }) => {
       <h3 className="weatherTemperature">
         Temperature{" "}
         <span>
-          {currentWeather ? currentWeather.main.temp_min : ""} to {" "}
-          {currentWeather ? currentWeather.main.temp_max : ""} C
+          {currentWeather.main.temp_min} to {" "}
+          {currentWeather.main.temp_max} C
         </span>
       </h3>
       <p className="moreInfo">
-        <span>Humidity</span> {currentWeather ? currentWeather.main.humidity : ""}%{" "}
-        <span>Pressure</span> {currentWeather ? currentWeather.main.pressure : ""}
+        <span>Humidity</span> {currentWeather.main.humidity}%{" "}
+        <span>Pressure</span> {currentWeather.main.pressure}
       </p>
     </section>
   );
