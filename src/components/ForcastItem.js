@@ -1,10 +1,11 @@
 import image from "../img/weather-icons/clear.svg"
+import convertTempreture, {formatTime} from "../common function/comminFunction"
 const ForcastItem = ({date,temp}) => {
     return (
         <li>
-            <p className="time">{date}</p>
+            <p className="time">{formatTime(date)}</p>
             <img src={image}></img>
-            <p className="forcatTemprature">{temp} C</p>
+            <p className="forcatTemprature">{convertTempreture(temp)} C</p>
         </li>
     );
 };

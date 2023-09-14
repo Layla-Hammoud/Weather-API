@@ -7,7 +7,6 @@ import "./App.css";
 
 const App = () => {
   const data = fakeWeatherData["list"].slice(-8);
-  console.log(data.slice(-7))
   return (
     <div className="app">
       <Search/>
