@@ -6,22 +6,27 @@ import WeatherForcast from "./components/WeatherForcast";
 import "./App.css";
 
 const App = () => {
+  const [loading,setLoading]=useState(false)
   const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState([]);
   const [error, setError] = useState(null);
   const API_KEY = "b8b2b42b9ec9d3509f8b08b33aa03d0c";
   const getData = async () => {
     if (city != "") {
+      setLoading(true)
+      setError(false)
       await axios
         .get(
           `http://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=8&units=metric&appid=${API_KEY}`
         )
         .then((response) => {
+          setLoading(false)
           setError(null)
           setWeatherData(response.data);
         })
         .catch((error) => {
           setWeatherData([])
+          setLoading(false)
           setError(error);
         });
     }
@@ -41,6 +46,9 @@ const App = () => {
     <div className="app">
       <Search setCity={setCity} />
       <main>
+        {loading
+          ? <h3 className="error"> loading ... </h3>
+          : null}
         {currentWeather !== null ? (
           <CurrentWeather
             currentWeather={currentWeather}
