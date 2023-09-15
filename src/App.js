@@ -44,7 +44,7 @@ const App = () => {
         {currentWeather !== null ? (
           <CurrentWeather
             currentWeather={currentWeather}
-            id={currentWeather["weather"][0]["id"]}
+            id={currentWeather["weather"][0]["id"]} desciption={currentWeather["weather"][0]["description"]}
           />
         ) : null}
         {error
