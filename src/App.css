@@ -131,7 +131,7 @@ ul{
     padding:10px;
   }
   input {
-    font-size: 10px;
+    font-size: 15px;
   }
   li img{
     width: 30px;
@@ -152,5 +152,8 @@ ul{
   }
   .weatherTemperature{
     font-size: 1.1em;
+  }
+  .error{
+    font-size: 1.3em;
   }
 }
