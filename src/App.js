@@ -8,6 +8,7 @@ import "./App.css";
 const App = () => {
   const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState([]);
+  const [error, setError] = useState(null);
   const API_KEY = "b8b2b42b9ec9d3509f8b08b33aa03d0c";
   const getData = async () => {
     if (city != "") {
@@ -16,22 +17,45 @@ const App = () => {
           `http://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=8&units=metric&appid=${API_KEY}`
         )
         .then((response) => {
+          setError(null)
           setWeatherData(response.data);
+        })
+        .catch((error) => {
+          setWeatherData([])
+          setError(error);
         });
     }
   };
-  const currentWeather = weatherData.list && weatherData.list.length > 0 ? weatherData.list[0] : null;
-  const forcasttWeather = weatherData.list && weatherData.list.length > 0 ?  weatherData.list.slice(1) : [];
-  console.log(forcasttWeather)
+  const currentWeather =
+    weatherData.list && weatherData.list.length > 0
+      ? weatherData.list[0]
+      : null;
+  const forcasttWeather =
+    weatherData.list && weatherData.list.length > 0
+      ? weatherData.list.slice(1)
+      : [];
   useEffect(() => {
-     getData(weatherData);
+    getData(weatherData);
   }, [city]);
   return (
     <div className="app">
       <Search setCity={setCity} />
       <main>
-      {currentWeather!==null?<CurrentWeather currentWeather={currentWeather} id={currentWeather["weather"][0]["id"]}/>:null}
-      {forcasttWeather.length !==0? <WeatherForcast data={forcasttWeather} /> : ""}
+        {currentWeather !== null ? (
+          <CurrentWeather
+            currentWeather={currentWeather}
+            id={currentWeather["weather"][0]["id"]}
+          />
+        ) : null}
+        {error
+          ? <h3 className="error">Sorry, We did not find the country &#128533; <br></br>
+        Try again &#128513; </h3>
+          : null}
+        {forcasttWeather.length !== 0 ? (
+          <WeatherForcast data={forcasttWeather} />
+        ) : (
+          ""
+        )}
       </main>
     </div>
   );
