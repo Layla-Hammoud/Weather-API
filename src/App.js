@@ -49,7 +49,7 @@ const App = () => {
         {loading
           ? <h3 className="error"> loading ... </h3>
           : null}
-        {currentWeather !== null ? (
+        {currentWeather && !loading ? (
           <CurrentWeather
             currentWeather={currentWeather}
             id={currentWeather["weather"][0]["id"]} desciption={currentWeather["weather"][0]["description"]}
@@ -59,7 +59,7 @@ const App = () => {
           ? <h3 className="error">Sorry, We did not find the country &#128533; <br></br>
         Try again &#128513; </h3>
           : null}
-        {forcasttWeather.length !== 0 ? (
+        {forcasttWeather.length !== 0 && !loading ? (
           <WeatherForcast data={forcasttWeather} />
         ) : (
           ""
