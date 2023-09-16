@@ -17,7 +17,7 @@ export const displayProperImage = (id) => {
     case id > 801 && id < 805:
       return "mostlycloudy.svg";
     default:
-      return false;
+      return "unknown.svg";
   }
 };
 export const formatTime = (time) => {
